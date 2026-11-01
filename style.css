@@ -1,0 +1,389 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    background: #080b18;
+}
+.navbar{
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    padding: 16px 8%;
+    align-items: center;
+    border: 1px solid #c084fc;
+    border-radius: 10px;
+    background: #080b18;
+}
+.logo h1{
+    color: #f5f3ff;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logo span{
+    color: #7c3aed;
+}
+.nav-links a{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 14px;
+    color: #f5f3ff;
+    padding: 8px;
+    transition: 0.3s ease-in-out;
+}
+.nav-links a:hover{
+    color: #7c3aed;
+    text-shadow: 0 0 18px;
+}
+.search-bar{
+    display: flex;
+    padding: 6px 14px;
+}
+.search-bar input{
+    border: 1px solid #c084fc;
+    border-radius: 25px;
+    background-color: transparent;
+    width: 100%;
+    font-size: 15px;
+}
+.search-bar button{
+    border: none;
+    background-color: transparent;
+    color:#c084fc;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s ease-in-out;
+}
+.search-bar button:hover{
+    color: #7c3aed;
+    box-shadow: 0 0 18px;
+}
+.menu-btn{
+    border: none;
+    color: #7c3aed;
+    background-color: transparent;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.menu-btn:hover{
+    display: none;
+    color: #7c3aed;
+    box-shadow: 0 0 18px;
+
+
+}
+/* --- RESPONSIVE MEDIA QUERY --- */
+@media screen and (max-width: 768px) {
+    /* हैमबर्गर मेनू बटन को मोबाइल पर दिखाना */
+    .menu-btn {
+        display: block !important;
+        cursor: pointer;
+    }
+
+    /* नॉर्मल नेविगेशन लिंक्स को मोबाइल पर वर्टिकल लिस्ट में बदलना */
+    .nav-links {
+        display: none; /* डिफ़ॉल्ट रूप से बंद रहेगा, JS से खुलेगा */
+        position: absolute;
+        top: 60px; /* आपके navbar की height के हिसाब से */
+        right: 20px;
+        background-color: #111111;
+        border: 1px solid #24eed4;
+        border-radius: 8px;
+        flex-direction: column;
+        width: 200px;
+        padding: 10px;
+        z-index: 1000;
+        box-shadow: 0 0 15px rgba(36, 238, 212, 0.3);
+    }
+
+    /* मोबाइल मेनू के अंदर के लिंक्स की स्टाइलिंग */
+    .nav-links a {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+
+    /* जब JS क्लास 'active' ऐड करे तो मेनू दिखे */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* सर्च बार को मोबाइल स्क्रीन पर थोड़ा छोटा या एडजस्ट करना */
+    .search-bar {
+        margin-right: 10px;
+    }
+    
+    .search-bar input {
+        width: 120px; /* छोटी स्क्रीन पर इनपुट विड्थ कम की */
+    }
+}
+.hero{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #080b18;
+}
+.left-content{
+    display:flex;
+    align-items: left;
+    flex-direction: column;
+    padding-left: 100px ;   
+}
+.left-content p{
+    margin: 10px;
+    font-size: 15px;
+    color: #f5f3ff;
+    line-height: 1.7;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 10px;
+}
+.left-content h1{
+    font-size: 40px;
+    color: #f5f3ff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.left-content span{
+    color: #7c3aed;
+}
+.btn{
+    border: 1px solid #c084fc;
+    background-color: #7c3aed;
+    height: 45px;
+    width: 145px;
+    border-radius: 30px;
+    color: #f5f3ff;
+    transition: 0.3 ease-in-out;
+    
+}
+.btn:hover{
+    color:#f5f3ff;
+    box-shadow: 0 0 18px;
+    background-color: #7c3aed;
+}
+.right-content{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    background-color: #080b18;
+    padding-right:50px ;
+}
+.right-content img{
+    height:500px;
+    width: 700px;
+    object-fit: cover;
+    border-radius: 40px;
+    border: 1px solid #7c3aed;
+    transition: 0.3s;
+}
+.right-content img{
+    box-shadow: 0 0 20px #7c3aed;
+}
+
+@media(max-width:768px){
+    .hero{
+        gap: 25px;
+        padding: 40px 5%;
+        flex-direction: column;
+
+    }
+    .home h1{
+        font-size: 36px;
+
+    }
+    .hero p{
+        font-size: 15px;
+    }
+    .hero img{
+        width: 100%;
+        height: auto
+    }
+}
+.games{
+    width: 100%;
+    height: auto;
+    min-height: 80vh;
+    padding: 40px;
+    padding-bottom: 60px;
+    background-color: #080b18;
+}
+.games h1{
+    font-size: 40px;
+    color: #f5f3ff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.games span{
+    color: #7c3aed;
+}
+.game-container{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+}
+.game-card{
+    height: 300px;
+    width: 300px;
+    border: 1px solid #7c3aed;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.game-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px #7c3aed;
+    cursor: pointer;
+}
+.game-card img{
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+
+}
+.game-info{
+    padding: 15px;
+}
+.game-info h3{
+    color: #f5f3ff;
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.game-info p{
+    display: inline-block;
+    color: #f5f3ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    border: 1px solid #c084fc;
+    border-radius: 20px;
+    padding: 4px;
+}
+.game-info button{
+    display: block;
+    margin-top: 10px;
+    background-color: transparent;
+    color: #f5f3ff;
+    border: 1px solid #7c3aed;
+    border-radius: 25px;
+    padding: 10px 18px;
+    cursor: pointer;
+    background-color: #c084fc;
+    transition: 0.3s;
+}
+.game-info button:hover{
+    background-color: #7c3aed;
+    box-shadow: 0 0 20px;
+}
+@media(max-width:768px){
+    .game-container{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .game-card{
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+/* Footer */
+.footer {
+    background: #090817;
+    color: white;
+    padding: 40px 7% 15px;
+    border-top: 2px solid #8b5cf6;
+}
+
+/* All footer sections */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-box {
+    flex: 1;
+    min-width: 180px;
+}
+
+.footer-box h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.footer-box h2 span {
+    color: #a855f7;
+}
+
+.footer-box h3 {
+    color: #c084fc;
+    margin-bottom: 15px;
+}
+
+.footer-box p {
+    color: #c4c2d6;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.footer-box a {
+    display: block;
+    color: #c4c2d6;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.footer-box a:hover {
+    color: #c084fc;
+    padding-left: 5px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #30264c;
+    margin-top: 30px;
+    padding-top: 18px;
+    color: #aaa6c3;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+
+    .footer {
+        padding: 30px 20px 15px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .footer-box {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .footer-box h2 {
+        font-size: 25px;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+}
+
+
